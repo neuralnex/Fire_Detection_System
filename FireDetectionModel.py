@@ -7,8 +7,8 @@ from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from keras.utils import to_categorical
 
 training_data = [
-    "Image path for your fire images",
-     "Image path for your non fire Images"
+    "C:/Users/DEV ZION/Downloads/archive (1)/fire_dataset/fire_images",
+     "C:/Users/DEV ZION/Downloads/archive (1)/fire_dataset/non_fire_images"
      ]
 
 def load_images(training_data):
@@ -47,7 +47,7 @@ model.add(Dense(2, activation='softmax'))
 
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics =['accuracy'])
 model.fit(X_train, y_train, batch_size=64, epochs=100, verbose=1, validation_data=(X_test,y_test))
-model.save("Name your model and save it in your prefered extension")
+model.save("fire_model.h5")
 
 
 
